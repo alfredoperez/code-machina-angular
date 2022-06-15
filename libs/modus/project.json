@@ -1,0 +1,39 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/modus/src",
+  "prefix": "modus",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/modus"],
+      "options": {
+        "project": "libs/modus/ng-package.json",
+        "tailwindConfig": "libs/modus/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/modus/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/modus/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/modus"],
+      "options": {
+        "jestConfig": "libs/modus/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/modus/**/*.ts", "libs/modus/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
