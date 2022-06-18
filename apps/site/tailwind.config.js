@@ -6,8 +6,22 @@ module.exports = {
     join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
-  theme: {
-    extend: {},
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "primary": "#a78bfa",
+          "secondary": "#7dd3fc",
+          "accent": "#f472b6",
+          "neutral": "#d6d3d1",
+          "base-100": "#212121",
+          "info": "#93E6FB",
+          "success": "#4ade80",
+          "warning": "#fde047",
+          "error": "#f87171",
+        },
+      },
+    ],
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
