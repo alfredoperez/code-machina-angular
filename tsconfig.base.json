@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@alacarta/feature-generators": ["libs/feature-generators/src/index.ts"],
       "ng-modus": ["libs/modus/src/index.ts"]
     }
   },

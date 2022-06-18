@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/feature-generators/src",
+  "prefix": "cm",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/feature-generators"],
+      "options": {
+        "project": "libs/feature-generators/ng-package.json",
+        "tailwindConfig": "libs/feature-generators/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/feature-generators/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/feature-generators/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature-generators"],
+      "options": {
+        "jestConfig": "libs/feature-generators/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature-generators/**/*.ts",
+          "libs/feature-generators/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

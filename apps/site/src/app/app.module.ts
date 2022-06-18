@@ -7,7 +7,18 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
-    imports: [BrowserModule, ModusModule, RouterModule],
+    imports: [BrowserModule, ModusModule,
+      RouterModule.forRoot([
+        { path: '', pathMatch: 'full', redirectTo: 'pages' },
+        {
+          path: 'pages',
+          loadChildren: () =>
+              import('@alacarta/feature-generators').then(
+                  (mod) => mod.FeatureGeneratorsModule                       // added
+              ),
+        },
+      ],
+          )],
   providers: [],
   bootstrap: [AppComponent],
 })
