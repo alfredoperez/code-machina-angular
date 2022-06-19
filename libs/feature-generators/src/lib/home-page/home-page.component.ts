@@ -4,6 +4,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { lowercase } from '../../../../utils/src/lib/string-utils';
 
 @Component({
   selector: 'cm-home-page',
@@ -15,5 +16,18 @@ import {
 export class HomePageComponent implements OnInit {
   constructor() {}
 
+  template = '';
+
   ngOnInit(): void {}
+
+  generate() {
+    const model = 'User';
+    this.template = `
+// ${lowercase(model)}
+
+);
+
+
+`;
+  }
 }

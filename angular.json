@@ -6,6 +6,7 @@
     "modus": "libs/modus",
     "modus-e2e": "apps/modus-e2e",
     "site": "apps/site",
-    "site-e2e": "apps/site-e2e"
+    "site-e2e": "apps/site-e2e",
+    "utils": "libs/utils"
   }
 }
