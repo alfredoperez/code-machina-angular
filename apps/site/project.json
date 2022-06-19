@@ -1,11 +1,13 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/site/src",
-  "prefix": "alacarta",
+  "prefix": "code-machina",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/site",
         "index": "apps/site/src/index.html",
@@ -13,8 +15,13 @@
         "polyfills": "apps/site/src/polyfills.ts",
         "tsConfig": "apps/site/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/site/src/favicon.ico", "apps/site/src/assets"],
-        "styles": ["apps/site/src/styles.scss"],
+        "assets": [
+          "apps/site/src/favicon.ico",
+          "apps/site/src/assets"
+        ],
+        "styles": [
+          "apps/site/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -71,12 +78,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/site/**/*.ts", "apps/site/**/*.html"]
+        "lintFilePatterns": [
+          "apps/site/**/*.ts",
+          "apps/site/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/site"],
+      "outputs": [
+        "coverage/apps/site"
+      ],
       "options": {
         "jestConfig": "apps/site/jest.config.ts",
         "passWithNoTests": true

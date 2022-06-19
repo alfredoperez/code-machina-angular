@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'alacarta-root',
+  selector: 'cm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
