@@ -1,1 +1,1 @@
-export * from './lib/modus.module';
+export * from './lib/vertical-navigation';

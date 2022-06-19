@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ModusModule } from 'ng-modus';
+import { VerticalNavigationComponent } from 'ng-modus';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    ModusModule,
+
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'pages' },
       {
@@ -19,6 +20,8 @@ import { AppComponent } from './app.component';
           ),
       },
     ]),
+
+    VerticalNavigationComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

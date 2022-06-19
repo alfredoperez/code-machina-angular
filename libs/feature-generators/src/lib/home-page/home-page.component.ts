@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnInit,
   ViewEncapsulation,
 } from '@angular/core';
 import { lowercase } from '../../../../utils/src/lib/string-utils';
@@ -13,12 +12,10 @@ import { lowercase } from '../../../../utils/src/lib/string-utils';
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomePageComponent implements OnInit {
-  constructor() {}
-
+export class HomePageComponent {
   template = '';
 
-  ngOnInit(): void {}
+  constructor() {}
 
   generate() {
     const model = 'User';

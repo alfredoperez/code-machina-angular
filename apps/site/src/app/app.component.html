@@ -26,7 +26,7 @@
 <!--    </aside>-->
 <!--    <router-outlet></router-outlet>-->
 <!--</main>-->
-<div class="bg-base-300 drawer drawer-mobile">
+<div class="bg-base-100 drawer drawer-mobile">
     <input id="drawer" type="checkbox" class="drawer-toggle"/>
     <div
             class="drawer-content"
@@ -77,7 +77,7 @@
                 </div>
             </nav>
         </div>
-        <main class="py-8 px-8">
+        <main class="py-8 px-8 bg-base-100">
             <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
                 <router-outlet></router-outlet>
             </div>
@@ -133,6 +133,7 @@
                     </a>
                 </li>
             </ul>
+            <modus-vertical-navigation [config]="navConfig"></modus-vertical-navigation>
         </aside>
     </div>
 </div>
