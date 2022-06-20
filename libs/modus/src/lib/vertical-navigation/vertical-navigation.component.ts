@@ -13,11 +13,19 @@ import { NavigationConfig } from './vertical-navigation.model';
   standalone: true,
   imports: [CommonModule, VerticalNavigationItemComponent],
   template: `
-    anavv
     <ng-container *ngFor="let section of config?.sections">
-      in section
-      {{ section.title }}
-      <ul class="menu menu-compact flex flex-col p-0 px-4 bg-base-300">
+      <p *ngIf="section.title" class="px-4 text-sm text-primary ">
+        {{ section.title }}
+      </p>
+
+      <p
+        *ngIf="section.subtitle"
+        class="px-4 text-xs text-base-content text-opacity-60 w-48 "
+      >
+        {{ section.subtitle }}
+      </p>
+
+      <ul class="menu menu-compact flex flex-col p-0 px-4 py-5 bg-base-300">
         <modus-vertical-navigation-item
           *ngFor="let item of section.items"
           [item]="item"

@@ -14,7 +14,9 @@ export class AppComponent implements OnInit {
       sections: [
         {
           title: 'Getting started',
-          items: [{ title: 'Overview', link: 'home' }],
+          subtitle: 'Set of guides to get you started with this template',
+          showDivider: true,
+          items: [{ title: 'Overview', link: 'pages/home' }],
         },
       ],
     } as NavigationConfig;

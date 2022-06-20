@@ -12,7 +12,44 @@ import { NavigationItem } from '../../vertical-navigation.model';
   selector: 'modus-vertical-navigation-item',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './vertical-navigation-item.component.html',
+  template: `
+    <!-- Item with an internal link -->
+    <ng-container *ngIf="item.link">
+      <li>
+        <a
+          [ngClass]="{ 'active bordered': item.active }"
+          [routerLink]="[item.link]"
+          [routerLinkActive]="'active'"
+        >
+          <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+        </a>
+      </li>
+    </ng-container>
+
+    <!-- Item is disabled -->
+    <ng-container *ngIf="item.disabled">
+      <div class="disabled">
+        <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+      </div>
+    </ng-container>
+
+    <!-- Item template -->
+    <ng-template #itemTemplate>
+      <!-- Icon -->
+      <ng-container *ngIf="item.icon"> IC</ng-container>
+
+      <!-- Title & Subtitle -->
+      <p>
+        {{ item.title }}
+      </p>
+
+      <ng-container *ngIf="item.subtitle">
+        <p class="text-xs">
+          {{ item.subtitle }}
+        </p>
+      </ng-container>
+    </ng-template>
+  `,
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

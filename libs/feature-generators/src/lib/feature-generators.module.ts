@@ -8,7 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     CommonModule,
 
     RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: HomePageComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', pathMatch: 'full', component: HomePageComponent },
     ]),
   ],

@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/modus"],
+      "outputs": [
+        "dist/libs/modus"
+      ],
       "options": {
         "project": "libs/modus/ng-package.json",
         "tailwindConfig": "libs/modus/tailwind.config.js"
@@ -22,7 +24,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/modus"],
+      "outputs": [
+        "coverage/libs/modus"
+      ],
       "options": {
         "jestConfig": "libs/modus/jest.config.ts",
         "passWithNoTests": true
@@ -31,7 +35,10 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["libs/modus/**/*.ts", "libs/modus/**/*.html"]
+        "lintFilePatterns": [
+          "libs/modus/**/*.ts",
+          "libs/modus/**/*.html"
+        ]
       }
     },
     "storybook": {
@@ -40,6 +47,9 @@
         "port": 4400,
         "configDir": "libs/modus/.storybook",
         "browserTarget": "modus:build-storybook",
+        "styles": [
+          "libs/modus/src/styles.scss"
+        ],
         "compodoc": false
       },
       "configurations": {
@@ -50,7 +60,9 @@
     },
     "build-storybook": {
       "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputDir": "dist/storybook/modus",
         "configDir": "libs/modus/.storybook",
